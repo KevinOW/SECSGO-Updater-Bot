@@ -14,6 +14,21 @@ headers = {
     'sec-ch-ua': "^\^"
     }
 
-r = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+r = requests.request("GET", url, data=payload, headers=headers, params=querystring).json()
 
-print(r.json())
+team1 = r['matches'][0]['team1']['name']
+team2 = r['matches'][0]['team2']['name']
+team1_score = r['matches'][0]['team1_score']
+team2_score = r['matches'][0]['team2_score']
+map_pool = r['matches'][0]['map_id']
+
+
+maps = r['map_pool']
+
+print(map_pool)
+print(team1 , end=" - ")
+print(team1_score)
+print(team2 , end=" - ")
+print(team2_score)
+
+print(maps)
