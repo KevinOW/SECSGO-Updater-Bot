@@ -1,11 +1,12 @@
 import requests
 import json
 import logging
-import re
 
+#LOGGING DATE & TIME
 logging.basicConfig(filename='backlog.log', level=logging.DEBUG,
                     format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
+#SCRAPER
 
 url = "https://esportal.com/api/tournament/get"
 
@@ -30,21 +31,25 @@ team1_score = r['matches'][0]['team1_score']
 team2_score = r['matches'][0]['team2_score']
 map_pool = r['matches'][0]['map_id']
 #maps = ['Dust', 'Inferno', 'Nuke', 'Overpass', 'Mirage', 'Vertigo', 'Ancient']
-#maps_change = ['map_id'.replace([0],[1],[2],[3],[4],[5],[6]) for item in ]
+
+
+#OUTPUTS
 
 for item in ['matches']:
     for row in ['map_id']:
         print("Map is",map_pool)
 
-
-
-print(map_pool)
+#print(map_pool)
 print(team1 , end=" - ")
 print(team1_score)
 print(team2 , end=" - ")
 print(team2_score)
 
+
+
+#LOGGING INFORMATION
 logging.info(team1)
 logging.info(team2)
 logging.info(team1_score)
 logging.info(team2_score)
+logging.info(map_pool)
