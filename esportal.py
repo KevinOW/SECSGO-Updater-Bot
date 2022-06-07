@@ -34,16 +34,23 @@ map_pool = r['matches'][0]['map_id']
 
 
 #OUTPUTS
-
-for item in ['matches']:
-    for row in ['map_id']:
-        print("Map is",map_pool)
+def displayMap():
+    for item in ['matches']:
+        for row in ['map_id']:
+            print("Map is",map_pool)
 
 #print(map_pool)
-print(team1 , end=" - ")
-print(team1_score)
-print(team2 , end=" - ")
-print(team2_score)
+def displayTeam_1():
+    print(team1 , end=" - ")
+
+def displayTeam_1_score():
+    print(team1_score)
+
+def displayTeam_2():
+    print(team2 , end=" - ")
+
+def displayTeam_2_score():
+    print(team2_score)
 
 
 
