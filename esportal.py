@@ -1,4 +1,6 @@
 import requests
+import array
+import json
 
 url = "https://esportal.com/api/tournament/get"
 
@@ -16,19 +18,49 @@ headers = {
 
 r = requests.request("GET", url, data=payload, headers=headers, params=querystring).json()
 
+
 team1 = r['matches'][0]['team1']['name']
 team2 = r['matches'][0]['team2']['name']
 team1_score = r['matches'][0]['team1_score']
 team2_score = r['matches'][0]['team2_score']
 map_pool = r['matches'][0]['map_id']
-
-
 maps = r['map_pool']
+
+maps = ['1', '2', '3', '4', '5', '18', '34']
+
+for i in range(len(maps)):
+
+    # replace 1 with Dust
+    if maps[i] == '1':
+        maps[i] = 'Dust'
+
+    # replace 2 with Ancient
+    if maps[i] == '2':
+        maps[i] = 'Inferno'
+
+    # replace 3 with Ancient
+    if maps[i] == '3':
+        maps[i] = 'Nuke'
+
+    # replace 4 with Ancient
+    if maps[i] == '4':
+        maps[i] = 'Overpass'
+
+    # replace 5 with Ancient
+    if maps[i] == '5':
+        maps[i] = 'Mirage'
+
+    # replace 18 with Ancient
+    if maps[i] == '18':
+        maps[i] = 'Vertigo'
+
+    # replace 34 with Ancient
+    if maps[i] == '34':
+        maps[i] = 'Ancient'
 
 print(map_pool)
 print(team1 , end=" - ")
 print(team1_score)
 print(team2 , end=" - ")
 print(team2_score)
-
 print(maps)
