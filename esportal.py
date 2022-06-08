@@ -64,6 +64,12 @@ def displayMaps():
         print('Map is: Dust')
     return
 
+def displayWinner():
+    if team1_score == 16:
+        print(team1,'- Wins')
+    elif team2_score == 16:
+        print(team2,' - Wins')
+        return
 
 # OUTPUTS
 displayTeam_1()
@@ -71,6 +77,7 @@ displayTeam_1_score()
 displayTeam_2()
 displayTeam_2_score()
 displayMaps()
+displayWinner()
 
 # LOGGING INFORMATION
 logging.info(team1)
