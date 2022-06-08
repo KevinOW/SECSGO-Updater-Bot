@@ -30,8 +30,6 @@ team2 = r['matches'][0]['team2']['name']
 team1_score = r['matches'][0]['team1_score']
 team2_score = r['matches'][0]['team2_score']
 map_pool = r['matches'][0]['map_id']
-#maps = ['Dust', 'Inferno', 'Nuke', 'Overpass', 'Mirage', 'Vertigo', 'Ancient']
-
 
 
 # FUNCTIONS
