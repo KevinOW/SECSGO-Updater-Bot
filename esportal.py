@@ -46,12 +46,14 @@ def displayTeam_2_score():
     print(team2_score)
 
 def displayMaps():
-    if map_pool == 34:
+    if map_pool == 0:
+        print('No map')
+    elif map_pool == 34:
         print('Map is: Ancient')
     elif map_pool == 18:
         print('Map is: Vertigo')
     elif map_pool == 5:
-        print('Mirage')
+        print('Map is: Mirage')
     elif map_pool == 4:
         print('Map is: Overpass')
     elif map_pool == 3:
