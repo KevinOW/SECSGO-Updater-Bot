@@ -25,11 +25,11 @@ headers = {
 r = requests.request("GET", url, data=payload, headers=headers, params=querystring).json()
 
 
-team1 = r['matches'][0]['team1']['name']
-team2 = r['matches'][0]['team2']['name']
-team1_score = r['matches'][0]['team1_score']
-team2_score = r['matches'][0]['team2_score']
-map_pool = r['matches'][0]['map_id']
+team1 = r['matches'][11]['team1']['name']
+team2 = r['matches'][11]['team2']['name']
+team1_score = r['matches'][11]['team1_score']
+team2_score = r['matches'][11]['team2_score']
+map_pool = r['matches'][11]['map_id']
 
 
 # FUNCTIONS
@@ -64,10 +64,10 @@ def displayMaps():
         print('Map is: Dust')
     return
 
-def displayWinner():
-    if team1_score == 16:
+#def displayWinner():
+    if team1_score >= 16 or 19:
         print(team1,'- Wins')
-    elif team2_score == 16:
+    elif team2_score == 16 or 19:
         print(team2,' - Wins')
         return
 
@@ -77,7 +77,7 @@ displayTeam_1_score()
 displayTeam_2()
 displayTeam_2_score()
 displayMaps()
-displayWinner()
+#displayWinner()
 
 # LOGGING INFORMATION
 logging.info(team1)
