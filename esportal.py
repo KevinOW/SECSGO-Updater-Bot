@@ -1,13 +1,13 @@
+# IMPORTS
 import requests
 import json
 import logging
 
-#LOGGING DATE & TIME
+# LOGGING DATE & TIME
 logging.basicConfig(filename='backlog.log', level=logging.DEBUG,
                     format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
-#SCRAPER
-
+# SCRAPER
 url = "https://esportal.com/api/tournament/get"
 
 querystring = {"_":"1654563653130","id":"2511"}
@@ -33,13 +33,8 @@ map_pool = r['matches'][0]['map_id']
 #maps = ['Dust', 'Inferno', 'Nuke', 'Overpass', 'Mirage', 'Vertigo', 'Ancient']
 
 
-#OUTPUTS
-def displayMap():
-    for item in ['matches']:
-        for row in ['map_id']:
-            print("Map is",map_pool)
 
-#print(map_pool)
+# FUNCTIONS
 def displayTeam_1():
     print(team1 , end=" - ")
 
@@ -52,9 +47,32 @@ def displayTeam_2():
 def displayTeam_2_score():
     print(team2_score)
 
+def displayMaps():
+    if map_pool == 34:
+        print('Map is: Ancient')
+    elif map_pool == 18:
+        print('Map is: Vertigo')
+    elif map_pool == 5:
+        print('Mirage')
+    elif map_pool == 4:
+        print('Map is: Overpass')
+    elif map_pool == 3:
+        print('Map is: Nuke')
+    elif map_pool == 2:
+        print('Map is: Inferno')
+    elif map_pool == 1:
+        print('Map is: Dust')
+    return
 
 
-#LOGGING INFORMATION
+# OUTPUTS
+displayTeam_1()
+displayTeam_1_score()
+displayTeam_2()
+displayTeam_2_score()
+displayMaps()
+
+# LOGGING INFORMATION
 logging.info(team1)
 logging.info(team2)
 logging.info(team1_score)
