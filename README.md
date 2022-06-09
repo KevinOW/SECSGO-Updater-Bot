@@ -10,7 +10,3 @@ This is a learning project of some sorts. I want to make something fun but a the
 
 - [@KevinOW](https://github.com/KevinOW)
 
-
-## Languages Used
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
