@@ -13,7 +13,7 @@ I pull data from the SECSGO page on [Esportal.com ](https://esportal.com/sv/secs
 
 * Team names 
 * Score 
-* Match IDs
+* Match ID's
 * What map was played during the game.  
 
 The Twitter bot will then collect the data and send it out. 
