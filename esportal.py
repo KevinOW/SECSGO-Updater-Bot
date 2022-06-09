@@ -9,7 +9,6 @@ logging.basicConfig(filename='backlog.log', level=logging.DEBUG,
 
 # SCRAPER
 url = "https://esportal.com/api/tournament/get"
-
 querystring = {"_":"1654563653130","id":"2511"}
 
 payload = ""
@@ -24,29 +23,40 @@ headers = {
 
 r = requests.request("GET", url, data=payload, headers=headers, params=querystring).json()
 
-match_id = r['matches'][0]['id']
-team1 = r['matches'][0]['team1']['name']
-team2 = r['matches'][0]['team2']['name']
-team1_score = r['matches'][0]['team1_score']
-team2_score = r['matches'][0]['team2_score']
-map_pool = r['matches'][0]['map_id']
+match_id = r['matches'][11]['id']
+team1 = r['matches'][11]['team1']['name']
+team2 = r['matches'][11]['team2']['name']
+team1_score = r['matches'][11]['team1_score']
+team2_score = r['matches'][11]['team2_score']
+map_pool = r['matches'][11]['map_id']
+
+
+# VARIABLES
 
 
 # FUNCTIONS
+def displayWinner():
+    return
+
 def displayMatchID():
     print(match_id)
+    return
 
 def displayTeam_1():
     print(team1 , end=" - ")
+    return
 
 def displayTeam_1_score():
     print(team1_score)
+    return
 
 def displayTeam_2():
     print(team2 , end=" - ")
+    return
 
 def displayTeam_2_score():
     print(team2_score)
+    return
 
 def displayMaps():
     if map_pool == 0:
@@ -68,11 +78,12 @@ def displayMaps():
     return
 
 #def displayWinner():
-    if team1_score >= 16 or 19:
+    if team1_score  >= 15:
         print(team1,'- Wins')
-    elif team2_score == 16 or 19:
+    elif team2_score >= 15:
         print(team2,' - Wins')
         return
+
 
 # OUTPUTS
 displayMatchID()
@@ -81,7 +92,7 @@ displayTeam_1_score()
 displayTeam_2()
 displayTeam_2_score()
 displayMaps()
-#displayWinner()
+displayWinner()
 
 # LOGGING INFORMATION
 logging.info(match_id)
