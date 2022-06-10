@@ -1,3 +1,6 @@
+# Scraper, output data
+
+
 # IMPORTS
 import requests
 import json
@@ -76,13 +79,6 @@ def displayMaps():
     elif map_pool == 1:
         print('Map is: Dust')
     return
-
-#def displayWinner():
-    if team1_score  >= 15:
-        print(team1,'- Wins')
-    elif team2_score >= 15:
-        print(team2,' - Wins')
-        return
 
 
 # OUTPUTS

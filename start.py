@@ -4,13 +4,12 @@ import os
 import schedule
 import time
 
-
 def job():
      print("I'm working...")
 
-schedule.every(2).seconds.do(job)
-
 while True:
+    schedule.every(15).minutes.do(job)
     os.system("esportal.py && twitter-bot.py")
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(900)
+
