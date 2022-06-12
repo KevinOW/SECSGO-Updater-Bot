@@ -2,6 +2,7 @@
 
 
 # IMPORTS
+from pip import main
 import requests
 import json
 import logging
@@ -26,19 +27,23 @@ headers = {
 
 r = requests.request("GET", url, data=payload, headers=headers, params=querystring).json()
 
-match_id = r['matches'][11]['id']
-team1 = r['matches'][11]['team1']['name']
-team2 = r['matches'][11]['team2']['name']
-team1_score = r['matches'][11]['team1_score']
-team2_score = r['matches'][11]['team2_score']
-map_pool = r['matches'][11]['map_id']
+match_id = r['matches'][0]['id']
+team1 = r['matches'][0]['team1']['name']
+team2 = r['matches'][0]['team2']['name']
+team1_score = r['matches'][0]['team1_score']
+team2_score = r['matches'][0]['team2_score']
+map_pool = r['matches'][0]['map_id']
 
 
 # VARIABLES
 
-
 # FUNCTIONS
+
 def displayWinner():
+    if team1_score >= team2_score:
+        print("Winner:", team1)
+    else:
+        print("Winner:", team2)
     return
 
 def displayMatchID():
