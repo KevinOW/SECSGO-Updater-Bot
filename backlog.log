@@ -1,0 +1,8 @@
+05-Sep-22 23:51:31 - Starting new HTTPS connection (1): esportal.com:443
+05-Sep-22 23:51:32 - https://esportal.com:443 "GET /api/tournament/get?_=1654563653130&id=2511 HTTP/1.1" 200 None
+05-Sep-22 23:51:32 - 4374501
+05-Sep-22 23:51:32 - EYEBALLERS
+05-Sep-22 23:51:32 - Kirikou
+05-Sep-22 23:51:32 - 16
+05-Sep-22 23:51:32 - 2
+05-Sep-22 23:51:32 - 34
